@@ -15,7 +15,7 @@ class Details extends Component {
   };
 
   render() {
-    // This will render the Details ArtistLis
+    // This will render the Details ArtistList
 
     return (
       <View>

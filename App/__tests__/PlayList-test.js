@@ -7,7 +7,7 @@ import "isomorphic-fetch";
 const playStore = (window.PlayStore = PlayStore.create(initialState));
 
 it("The PlayList Model API is successfully called", async function() {
-  await playStore.fetchData()
+  await playStore.fetchData();
 
   const res = playStore.playLists;
 

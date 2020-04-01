@@ -13,5 +13,5 @@ it("The playList Model API is successfully called", async function() {
 
   console.warn(res);
 
-  expect(res.length).toBeGreaterThanOrEqual(0)
+  expect(res.length).toBeGreaterThanOrEqual(0);
 });

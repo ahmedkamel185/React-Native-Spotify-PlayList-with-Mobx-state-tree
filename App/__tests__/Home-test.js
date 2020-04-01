@@ -12,7 +12,7 @@ const playStore = (window.PlayStore = PlayStore.create(initialState));
 const artistStore = (window.ArtistStore = ArtistStore.create(initialState));
 
 it("Home Renders Correctly", () => {
-  const helo = renderer.create
+  const helo = renderer.create(
     <Provider PlayStore={playStore.fetchData()} ArtistStore={artistStore}>
       <Home />
     </Provider>

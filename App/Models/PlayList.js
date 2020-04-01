@@ -50,7 +50,7 @@ const PlayList = types
 
             self.pushItems(responseJson.playlists.items);
 
-            //  return responseJson.playlists.item
+            //  return responseJson.playlists.items
           });
       } catch (error) {
         console.log("error2: ", error);

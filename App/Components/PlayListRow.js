@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
 export default function PlayListRow({ playlist }) {
-  // This will return the PlayList row componen
+  // This will return the PlayList row component
 
   return (
     <View style={styles.container}>

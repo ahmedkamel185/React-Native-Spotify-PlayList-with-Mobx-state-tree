@@ -42,7 +42,7 @@ const ArtistList = types
           {
             method: "GET",
             headers: {
-              //this what's exactly look in my postma
+              //this what's exactly look in my postman
               Authorization: "Bearer " + self.token
             }
           }
