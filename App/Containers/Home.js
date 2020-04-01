@@ -35,7 +35,7 @@ class Home extends React.Component {
   };
 
   render() {
-    // This will render the Home PlayLis
+    // This will render the Home PlayList
 
     return (
       <View>
