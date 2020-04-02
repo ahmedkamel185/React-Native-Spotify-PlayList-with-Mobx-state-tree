@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   View,
@@ -6,11 +6,11 @@ import {
   StyleSheet,
   ActivityIndicator,
   TouchableOpacity
-} from "react-native";
-import PlayListRow from "../Components/PlayListRow";
-import { observer, inject } from "mobx-react";
+} from 'react-native';
+import PlayListRow from '../Components/PlayListRow';
+import { observer, inject } from 'mobx-react';
 
-@inject("PlayStore", "ArtistStore")
+@inject('PlayStore', 'ArtistStore')
 @observer
 class Home extends React.Component {
   constructor(props) {
@@ -23,13 +23,13 @@ class Home extends React.Component {
 
     ArtistStore.fetchData(id);
 
-    navigation.navigate("Details");
+    navigation.navigate('Details');
   }
 
   renderFooter = () => {
     return (
       <View>
-        <ActivityIndicator style={{ height: 80 }} color="#C00" size="large" />
+        <ActivityIndicator style={{ height: 80 }} color='#C00' size='large' />
       </View>
     );
   };
@@ -46,7 +46,7 @@ class Home extends React.Component {
           onEndReachedThreshold={100}
           ListFooterComponent={() =>
             PlayStore.isLoading ? null : (
-              <ActivityIndicator size="large" animating />
+              <ActivityIndicator size='large' animating />
             )
           }
           renderItem={({ item }) => (

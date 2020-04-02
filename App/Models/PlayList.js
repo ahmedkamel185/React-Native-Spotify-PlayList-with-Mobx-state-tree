@@ -1,14 +1,14 @@
-import { types } from "mobx-state-tree";
+import { types } from 'mobx-state-tree';
 
-const owner = types.model("Owner", {
+const owner = types.model('Owner', {
   display_name: types.string
 });
 
-const image = types.model("image", {
+const image = types.model('image', {
   url: types.string
 });
 
-const playlists = types.model("playlists", {
+const playlists = types.model('playlists', {
   id: types.string,
   name: types.string,
   images: types.optional(types.array(image), []),
@@ -16,7 +16,7 @@ const playlists = types.model("playlists", {
 });
 
 const PlayList = types
-  .model("Book", {
+  .model('Book', {
     isLoading: false,
     token: types.string,
     offset: types.integer,
@@ -30,15 +30,15 @@ const PlayList = types
 
       try {
         const res = fetch(
-          "https://api.spotify.com/v1/browse/featured-playlists?" +
-            "limit=20&offset=" +
+          'https://api.spotify.com/v1/browse/featured-playlists?' +
+            'limit=20&offset=' +
             self.offset,
 
           {
-            method: "GET",
+            method: 'GET',
             headers: {
               //this what's exactly look in my postman
-              Authorization: "Bearer " + self.token
+              Authorization: 'Bearer ' + self.token
             }
           }
         )
@@ -53,7 +53,7 @@ const PlayList = types
             //  return responseJson.playlists.items
           });
       } catch (error) {
-        console.log("error2: ", error);
+        console.log('error: ', error);
         self.error = error;
       }
     },

@@ -1,4 +1,4 @@
-import { types } from "mobx-state-tree";
+import { types } from 'mobx-state-tree';
 
 const artist = types.model("artist", {
   id: types.string,
@@ -6,21 +6,21 @@ const artist = types.model("artist", {
   type: types.string
 });
 
-const artists = types.model("artists", {
+const artists = types.model('artists', {
   artists: types.optional(types.array(artist), [])
 });
 
-const track = types.model("track", {
+const track = types.model('track', {
   track: artists
 });
 
 const ArtistList = types
-  .model("ArtistList", {
+  .model('ArtistList', {
     isLoading: false,
     token: types.string,
     offset: types.integer,
     artistLists: types.array(track),
-    playlist_id: ""
+    playlist_id: ''
   })
   .actions(self => ({
     fetchData(playlist_id) {
@@ -33,17 +33,17 @@ const ArtistList = types
 
       try {
         const res = fetch(
-          "https://api.spotify.com/v1/playlists/" +
+          'https://api.spotify.com/v1/playlists/' +
             self.playlist_id +
-            "/tracks?" +
-            "limit=20&offset=" +
+            '/tracks?' +
+            'limit=20&offset=' +
             self.offset,
 
           {
-            method: "GET",
+            method: 'GET',
             headers: {
               //this what's exactly look in my postman
-              Authorization: "Bearer " + self.token
+              Authorization: 'Bearer ' + self.token
             }
           }
         )
